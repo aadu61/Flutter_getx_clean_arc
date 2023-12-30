@@ -14,6 +14,24 @@ class AppString {
   static const fillInDetailsToRegisterYourself = "Fill in details to register yourself";
   static const fullName = "Full Name";
   static const email = "Email";
+  static const home = "Home";
+  static const grocery = "Grocery";
+  static const group = "Group";
+  static const wallet = "Wallet";
+  static const profile = "Profile";
+  static const get200Off = "200 QR off";
+  static const get = "Get";
+  static const getFlatOff = "flat 20% off";
+  static const onOrderAbove999Qr = "On order above 999 QR";
+  static const onOrderAbove200Qr = "On order above 200 QR";
+  static const orderNow = "Order Now";
+  static const popularBrand = "Popular brands";
+  static const whatInYourMind = "What’s in your mind?";
+
+
+
+
+
 }
 
 class AppStringHebrew {
@@ -32,6 +50,21 @@ class AppStringHebrew {
   static const fillInDetailsToRegisterYourself = "מלא פרטים כדי להירשם";
   static const fullName = "שם מלא";
   static const email = "אימייל";
+  static const home = "בית";
+  static const grocery = "מַכּוֹלֶת";
+  static const group = "קְבוּצָה";
+  static const wallet = "ארנק";
+  static const profile = "פּרוֹפִיל";
+  static const get200Off = "200 QR הנחה";
+  static const get = "לקבל";
+  static const getFlatOff = "שטוח 20% הנחה";
+
+  static const onOrderAbove999Qr = "בהזמנה מעל 999 QR";
+  static const onOrderAbove200Qr = "בהזמנה מעל 200 QR";
+
+  static const popularBrand = "מותגים פופולריים";
+  static const orderNow = "הזמן עכשיו";
+  static const whatInYourMind = "מה עובר לך בראש?";
 }
 
 class AppStringArabic {
@@ -50,4 +83,19 @@ class AppStringArabic {
   static const fillInDetailsToRegisterYourself = "املأ التفاصيل لتسجيل نفسك";
   static const fullName = "الاسم الكامل";
   static const email = "بريد إلكتروني";
+  static const home = "بيت";
+  static const grocery = "خضروات";
+  static const group = "مجموعة";
+  static const wallet = "محفظة";
+  static const profile = "حساب تعريفي";
+  static const get200Off = "خصم 200 ريال قطري";
+  static const get = "يحصل";
+  static const getFlatOff = "خصم ثابت 20%";
+
+  static const onOrderAbove999Qr = "للطلبات التي تزيد قيمتها عن 999 ريال قطري";
+  static const onOrderAbove200Qr = "للطلبات فوق 200 ريال قطري";
+
+  static const popularBrand = "العلامات التجارية الشعبية";
+  static const orderNow = "اطلب الان";
+  static const whatInYourMind = "بماذا تفكر؟";
 }

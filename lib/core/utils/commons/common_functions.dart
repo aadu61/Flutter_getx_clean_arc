@@ -372,6 +372,70 @@ class CommonFunctions {
 
 
 
+  /// Custom EditTextView We are using for this particular product
+  /// Here we need required parameters like editController,hintText.prefixIcon,formKey,headerText,isFieldEmpty,onFocusChange
+  /// optional parameters validation,isPasswordType,suffixIcon
+  ///
+  /// on focus changed return true value when TextFormField is focused and unfocused
+  static customEditText(
+      {TextEditingController? editController,
+        String? labelText,
+        Key? formKey,
+        bool? isFieldEmpty,
+        String? Function(dynamic value)? validation,
+        TextInputAction? textInputAction,
+        TextInputType? inputType,
+        bool? isPasswordType,
+        String? hintText,
+        bool? isRead,
+        Widget? suffixIcon,
+        String? prefixIcon,
+        Null Function(bool)? onFocusChange,
+        Null Function(dynamic value)? onChanged,
+        String? initialValue}) {
+    return Form(
+      key: formKey,
+      child: Focus(
+        onFocusChange: onFocusChange,
+        child: Container(
+          decoration: BoxDecoration(
+              color: MyColors.appCardBackGround,
+            borderRadius: BorderRadius.circular(16.sp)
+          ),
+          child: TextFormField(
+            initialValue: initialValue,
+            validator: validation,
+            obscureText: isPasswordType ?? false,
+            onChanged: onChanged,
+            readOnly: isRead ?? false,
+            cursorColor: MyColors.appPrimaryRed,
+            cursorHeight: 15.sp,
+            style: TextStyle(color: MyColors.appBlackColor, fontSize: 16.sp, fontFamily: Fonts.poppins, fontWeight: FontWeight.w400),
+            decoration: InputDecoration(
+              hintText: hintText ?? "",
+              hintStyle: TextStyle(color: MyColors.darkGrey, fontFamily: Fonts.poppins, fontSize: 16.sp),
+              suffix: suffixIcon,
+              contentPadding:  const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              prefixIcon: prefixIcon != null ? Padding(
+                padding: EdgeInsets.only(left:15.sp,right: 5.sp),
+                child: Image.asset(
+                  prefixIcon,
+                  width: 24.sp,
+                  height: 24.sp,
+                  color: MyColors.fontGrey,
+                ),
+              ):null,
+                prefixIconConstraints: BoxConstraints(maxWidth: 50.sp),
+              filled: true,
+              fillColor: Colors.transparent,
+              border: InputBorder. none
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
 
 }
 

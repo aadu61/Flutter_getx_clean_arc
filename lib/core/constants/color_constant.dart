@@ -11,6 +11,11 @@ class MyColors {
  static Color lightGray = const Color(0xffB7B7B7);
  static Color fontGrey = const Color(0xff858585);
  static Color newGrayTextColor =  const Color(0xff626C7A);
+ static Color darkGrey =  const Color(0xffA6A6A6);
+ static Color blueBanner =  const Color(0xff007499);
+ static Color voliteBanner =  const Color(0xff6733AB);
+ static Color orangeBanner =  const Color(0xffE56000);
+ static Color scafoldBg =  const Color(0xffFCFCFC);
 
  static Color shimmerBaseColor = Colors.black.withOpacity(0.8);
  static Color shimmerHighLightColor = const Color(0xffF9F9F9);

@@ -1,5 +1,6 @@
 import 'package:mashe/business_logic/controllers/splash_screen_controllers/splash_controller.dart';
 import 'package:mashe/core/export_core.dart';
+import 'package:mashe/ui/dashboard_module/dash_board_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -106,7 +107,9 @@ class SplashScreen extends StatelessWidget {
                               CustomSize.verticalSpace(40.sp),
                               CustomButton(
                                 name: AppString.getStarted.tr,
-                                onTap: () {},
+                                onTap: () {
+                                  Get.to(()=> DashBoardScreen());
+                                },
                                 inSideVerticalPadding: 14.sp,
                                 isActive: true,
                               ),

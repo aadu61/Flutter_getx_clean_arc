@@ -21,6 +21,19 @@ class LanguageChange extends Translations {
     AppString.fillInDetailsToRegisterYourself: AppString.fillInDetailsToRegisterYourself,
     AppString.fullName: AppString.fullName,
     AppString.email: AppString.email,
+    AppString.home:AppString.home,
+    AppString.grocery:AppString.grocery,
+    AppString.group:AppString.group,
+    AppString.wallet:AppString.wallet,
+    AppString.profile:AppString.profile,
+    AppString.get:AppString.get,
+    AppString.get200Off:AppString.get200Off,
+    AppString.getFlatOff:AppString.getFlatOff,
+    AppString.onOrderAbove200Qr:AppString.onOrderAbove200Qr,
+    AppString.onOrderAbove999Qr:AppString.onOrderAbove999Qr,
+    AppString.orderNow:AppString.orderNow,
+    AppString.popularBrand:AppString.popularBrand,
+    AppString.whatInYourMind:AppString.whatInYourMind,
   };
 
   Map<String, String> hebrewIl = {
@@ -38,6 +51,18 @@ class LanguageChange extends Translations {
     AppString.fillInDetailsToRegisterYourself: AppStringHebrew.fillInDetailsToRegisterYourself,
     AppString.fullName: AppStringHebrew.fullName,
     AppString.email: AppStringHebrew.email,
+    AppString.home:AppStringHebrew.home,
+    AppString.grocery:AppStringHebrew.grocery,
+    AppString.group:AppStringHebrew.group,
+    AppString.wallet:AppStringHebrew.wallet,
+    AppString.profile:AppStringHebrew.profile,
+    AppString.get:AppStringHebrew.get,
+    AppString.get200Off:AppStringHebrew.get200Off,
+    AppString.getFlatOff:AppStringHebrew.getFlatOff,
+    AppString.onOrderAbove200Qr:AppStringHebrew.onOrderAbove200Qr,
+    AppString.onOrderAbove999Qr:AppStringHebrew.onOrderAbove999Qr,
+    AppString.orderNow:AppStringHebrew.orderNow,
+    AppString.whatInYourMind:AppStringHebrew.whatInYourMind,
   };
 
   Map<String, String> arabicIq = {
@@ -55,5 +80,18 @@ class LanguageChange extends Translations {
     AppString.fillInDetailsToRegisterYourself: AppStringArabic.fillInDetailsToRegisterYourself,
     AppString.fullName: AppStringArabic.fullName,
     AppString.email: AppStringArabic.email,
+    AppString.home:AppStringArabic.home,
+    AppString.grocery:AppStringArabic.grocery,
+    AppString.group:AppStringArabic.group,
+    AppString.wallet:AppStringArabic.wallet,
+    AppString.profile:AppStringArabic.profile,
+    AppString.get:AppStringArabic.get,
+    AppString.get200Off:AppStringArabic.get200Off,
+    AppString.getFlatOff:AppStringArabic.getFlatOff,
+    AppString.onOrderAbove200Qr:AppStringArabic.onOrderAbove200Qr,
+    AppString.onOrderAbove999Qr:AppStringArabic.onOrderAbove999Qr,
+    AppString.orderNow:AppStringArabic.orderNow,
+    AppString.popularBrand:AppStringArabic.popularBrand,
+    AppString.whatInYourMind:AppStringArabic.whatInYourMind,
   };
 }

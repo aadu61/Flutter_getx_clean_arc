@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
       builder: (context,child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          translations: LanguageChange(),
+          // translations: LanguageChange(),
+          translationsKeys: LanguageChange().keys,
           locale: const Locale("en","US"),   /// for getting device local we can use get.deviceLocale
           fallbackLocale: const Locale("en","US"),
           theme: ThemeData(
