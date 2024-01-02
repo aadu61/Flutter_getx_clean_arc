@@ -1,6 +1,5 @@
 import 'dart:io';
 
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,15 +12,15 @@ import 'export_common.dart';
 class CommonFunctions {
   static imageLoading(
       {required String filePath,
-        Null Function()? onTap,
-        double? width,
-        double? height,
-        bool? isProfile,
-        String? name,
-        BoxFit? fit,
-        BorderRadius? borderRadius,
-        Widget Function(BuildContext _, String __, dynamic ___)? errorBuilder,
-        Color? color}) {
+      Null Function()? onTap,
+      double? width,
+      double? height,
+      bool? isProfile,
+      String? name,
+      BoxFit? fit,
+      BorderRadius? borderRadius,
+      Widget Function(BuildContext _, String __, dynamic ___)? errorBuilder,
+      Color? color}) {
     if (CustomValidation.hasValidUrl(filePath)) {
       return GestureDetector(
           behavior: HitTestBehavior.opaque,
@@ -35,7 +34,7 @@ class CommonFunctions {
               color: color,
               imageUrl: filePath,
               errorWidget: errorBuilder ??
-                      (_, __, ___) {
+                  (_, __, ___) {
                     if (isProfile != null) {
                       return errorUserImageContainer(width: width, height: height, borderRadius: borderRadius);
                     } else {
@@ -143,16 +142,12 @@ class CommonFunctions {
         padding: EdgeInsets.all(30.sp),
         child: name == null
             ? Image.asset(
-          ImageConstants.appLogoSplashScreen,
-        )
+                ImageConstants.appLogoSplashScreen,
+              )
             : Center(
-          child: customTextView(
-              text: clipName(userName: name, custom: false),
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w700,
-              color: MyColors.appBlackColor,
-              fontFamily: Fonts.poppins),
-        ),
+                child: customTextView(
+                    text: clipName(userName: name, custom: false), fontSize: 32.sp, fontWeight: FontWeight.w700, color: MyColors.appBlackColor, fontFamily: Fonts.poppins),
+              ),
       ),
     );
   }
@@ -263,24 +258,23 @@ class CommonFunctions {
 
   static Widget customTextView(
       {required String text,
-        Color? color,
-        Color? backgroundColor,
-        double? fontSize,
-        FontWeight? fontWeight,
-        String? fontFamily,
-        TextDecoration? textDecoration,
-        TextAlign? textAlign,
-        TextOverflow? overflow,
-        Paint? foreGround,
-        double? lineHeight,
-        TextStyle? style,
-        int? maxLine}) {
+      Color? color,
+      Color? backgroundColor,
+      double? fontSize,
+      FontWeight? fontWeight,
+      String? fontFamily,
+      TextDecoration? textDecoration,
+      TextAlign? textAlign,
+      TextOverflow? overflow,
+      Paint? foreGround,
+      double? lineHeight,
+      TextStyle? style,
+      int? maxLine}) {
     return Text(
       text,
       textAlign: textAlign,
       overflow: overflow,
       maxLines: maxLine,
-
       style: style ??
           TextStyle(
             decoration: textDecoration ?? TextDecoration.none,
@@ -289,7 +283,6 @@ class CommonFunctions {
             fontFamily: fontFamily ?? Fonts.poppins,
             fontWeight: fontWeight,
             foreground: foreGround,
-
             backgroundColor: backgroundColor,
             color: color,
           ),
@@ -370,8 +363,6 @@ class CommonFunctions {
     );
   }
 
-
-
   /// Custom EditTextView We are using for this particular product
   /// Here we need required parameters like editController,hintText.prefixIcon,formKey,headerText,isFieldEmpty,onFocusChange
   /// optional parameters validation,isPasswordType,suffixIcon
@@ -379,29 +370,26 @@ class CommonFunctions {
   /// on focus changed return true value when TextFormField is focused and unfocused
   static customEditText(
       {TextEditingController? editController,
-        String? labelText,
-        Key? formKey,
-        bool? isFieldEmpty,
-        String? Function(dynamic value)? validation,
-        TextInputAction? textInputAction,
-        TextInputType? inputType,
-        bool? isPasswordType,
-        String? hintText,
-        bool? isRead,
-        Widget? suffixIcon,
-        String? prefixIcon,
-        Null Function(bool)? onFocusChange,
-        Null Function(dynamic value)? onChanged,
-        String? initialValue}) {
+      String? labelText,
+      Key? formKey,
+      bool? isFieldEmpty,
+      String? Function(dynamic value)? validation,
+      TextInputAction? textInputAction,
+      TextInputType? inputType,
+      bool? isPasswordType,
+      String? hintText,
+      bool? isRead,
+      Widget? suffixIcon,
+      String? prefixIcon,
+      Null Function(bool)? onFocusChange,
+      Null Function(dynamic value)? onChanged,
+      String? initialValue}) {
     return Form(
       key: formKey,
       child: Focus(
         onFocusChange: onFocusChange,
         child: Container(
-          decoration: BoxDecoration(
-              color: MyColors.appCardBackGround,
-            borderRadius: BorderRadius.circular(16.sp)
-          ),
+          decoration: BoxDecoration(color: MyColors.appCardBackGround, borderRadius: BorderRadius.circular(16.sp)),
           child: TextFormField(
             initialValue: initialValue,
             validator: validation,
@@ -412,31 +400,41 @@ class CommonFunctions {
             cursorHeight: 15.sp,
             style: TextStyle(color: MyColors.appBlackColor, fontSize: 16.sp, fontFamily: Fonts.poppins, fontWeight: FontWeight.w400),
             decoration: InputDecoration(
-              hintText: hintText ?? "",
-              hintStyle: TextStyle(color: MyColors.darkGrey, fontFamily: Fonts.poppins, fontSize: 16.sp),
-              suffix: suffixIcon,
-              contentPadding:  const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              prefixIcon: prefixIcon != null ? Padding(
-                padding: EdgeInsets.only(left:15.sp,right: 5.sp),
-                child: Image.asset(
-                  prefixIcon,
-                  width: 24.sp,
-                  height: 24.sp,
-                  color: MyColors.fontGrey,
-                ),
-              ):null,
+                hintText: hintText ?? "",
+                hintStyle: TextStyle(color: MyColors.darkGrey, fontFamily: Fonts.poppins, fontSize: 16.sp),
+                suffix: suffixIcon,
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                prefixIcon: prefixIcon != null
+                    ? Padding(
+                        padding: EdgeInsets.only(left: 15.sp, right: 5.sp),
+                        child: Image.asset(
+                          prefixIcon,
+                          width: 24.sp,
+                          height: 24.sp,
+                          color: MyColors.fontGrey,
+                        ),
+                      )
+                    : null,
                 prefixIconConstraints: BoxConstraints(maxWidth: 50.sp),
-              filled: true,
-              fillColor: Colors.transparent,
-              border: InputBorder. none
-            ),
+                filled: true,
+                fillColor: Colors.transparent,
+                border: InputBorder.none),
           ),
         ),
       ),
     );
   }
 
-
+  static customRestaurantIcon({String? title}) {
+    List<String> trimmedNameList = title!.split(" ");
+    return Container(
+      height: 48.sp,
+      width: 48.sp,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: MyColors.naturalWhite, width: 2.sp), color: MyColors.appPrimaryRed),
+      child: CommonFunctions.customTextView(text: trimmedNameList.first[0], fontSize: 26.sp, fontWeight: FontWeight.w800, color: MyColors.naturalWhite),
+    );
+  }
 }
 
 String clipName({required String userName, bool custom = false}) {
@@ -446,14 +444,14 @@ String clipName({required String userName, bool custom = false}) {
     if (custom) {
       return trimmedName != ''
           ? (trimmedNameList.length >= 2)
-          ? trimmedNameList.first[0].toUpperCase() + trimmedNameList[1][0].toUpperCase()
-          : trimmedNameList.first[0].toUpperCase() + trimmedNameList.first[1].toUpperCase()
+              ? trimmedNameList.first[0].toUpperCase() + trimmedNameList[1][0].toUpperCase()
+              : trimmedNameList.first[0].toUpperCase() + trimmedNameList.first[1].toUpperCase()
           : '';
     } else {
       return trimmedName != ''
           ? (trimmedNameList.length >= 2)
-          ? trimmedNameList.first[0].toUpperCase() + trimmedNameList.last[0].toUpperCase()
-          : trimmedNameList.first[0].toUpperCase() + trimmedNameList.first[1].toUpperCase()
+              ? trimmedNameList.first[0].toUpperCase() + trimmedNameList.last[0].toUpperCase()
+              : trimmedNameList.first[0].toUpperCase() + trimmedNameList.first[1].toUpperCase()
           : '';
     }
   } catch (e) {

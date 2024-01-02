@@ -40,5 +40,19 @@ class ImageConstants {
   static String pizzaHutRec = "${basePathIcon}ic_pizzahut.png";
   static String japanika = "${basePathIcon}ic_Japanika.png";
   static String scooter = "${basePathIcon}ic_scooter.png";
+  static String grill = "${basePathIcon}ic_grill.png";
+  static String burgerFoodType = "${basePathIcon}ic_burger.png";
+  static String shawarma = "${basePathIcon}ic_shawarma.png";
+  static String ic_pizza = "${basePathIcon}ic_pizza.png";
+  static String imgShawarma = "${basePath}img_shawarma_ad.jpg";
+  static String icHeartFill = "${basePathIcon}ic_heart_fill.png";
+  static String icUnHeartFill = "${basePathIcon}ic_heart_un_fill.png";
+  static String imgAlKhalilCafe = "${basePath}img_Al_khalil_cafe.jpg";
+  static String imgAoneShawarma = "${basePath}img_aone_shawarma.jpg";
+  static String imgGrilledClub = "${basePath}img_grilled_club.jpg";
+  static String imgKebabStation = "${basePath}img_kebab_station.jpg";
+  static String imgMrShawarma = "${basePath}img_mr_shawarma.jpg";
+  static String imgShawarmaClub = "${basePath}img_shawarma_club.jpg";
+
 
 }

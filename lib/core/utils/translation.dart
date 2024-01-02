@@ -34,6 +34,13 @@ class LanguageChange extends Translations {
     AppString.orderNow:AppString.orderNow,
     AppString.popularBrand:AppString.popularBrand,
     AppString.whatInYourMind:AppString.whatInYourMind,
+    AppString.all:AppString.all,
+    AppString.openNow:AppString.openNow,
+    AppString.nearest:AppString.nearest,
+    AppString.grill:AppString.grill,
+    AppString.burger:AppString.burger,
+    AppString.shawarma:AppString.shawarma,
+    AppString.pizza:AppString.pizza,
   };
 
   Map<String, String> hebrewIl = {
@@ -63,6 +70,13 @@ class LanguageChange extends Translations {
     AppString.onOrderAbove999Qr:AppStringHebrew.onOrderAbove999Qr,
     AppString.orderNow:AppStringHebrew.orderNow,
     AppString.whatInYourMind:AppStringHebrew.whatInYourMind,
+    AppString.all:AppStringHebrew.all,
+    AppString.openNow:AppStringHebrew.openNow,
+    AppString.nearest:AppStringHebrew.nearest,
+    AppString.grill:AppStringHebrew.grill,
+    AppString.burger:AppStringHebrew.burger,
+    AppString.shawarma:AppStringHebrew.shawarma,
+    AppString.pizza:AppStringHebrew.pizza,
   };
 
   Map<String, String> arabicIq = {
@@ -93,5 +107,12 @@ class LanguageChange extends Translations {
     AppString.orderNow:AppStringArabic.orderNow,
     AppString.popularBrand:AppStringArabic.popularBrand,
     AppString.whatInYourMind:AppStringArabic.whatInYourMind,
+    AppString.all:AppStringArabic.all,
+    AppString.openNow:AppStringArabic.openNow,
+    AppString.nearest:AppStringArabic.nearest,
+    AppString.grill:AppStringArabic.grill,
+    AppString.burger:AppStringArabic.burger,
+    AppString.shawarma:AppStringArabic.shawarma,
+    AppString.pizza:AppStringArabic.pizza,
   };
 }

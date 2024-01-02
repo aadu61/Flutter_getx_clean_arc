@@ -28,6 +28,14 @@ class AppString {
   static const popularBrand = "Popular brands";
   static const whatInYourMind = "What’s in your mind?";
 
+  static const all = "All";
+  static const openNow = "Open now";
+  static const nearest = "Nearest";
+  static const grill = "Grill";
+  static const burger = "Burger";
+  static const shawarma = "Shawarma";
+  static const pizza = "Pizza";
+
 
 
 
@@ -58,13 +66,19 @@ class AppStringHebrew {
   static const get200Off = "200 QR הנחה";
   static const get = "לקבל";
   static const getFlatOff = "שטוח 20% הנחה";
-
   static const onOrderAbove999Qr = "בהזמנה מעל 999 QR";
   static const onOrderAbove200Qr = "בהזמנה מעל 200 QR";
-
   static const popularBrand = "מותגים פופולריים";
   static const orderNow = "הזמן עכשיו";
   static const whatInYourMind = "מה עובר לך בראש?";
+
+  static const all = "את כל";
+  static const openNow = "פתוח עכשיו";
+  static const nearest = "הכי קרוב";
+  static const grill = "גְרִיל";
+  static const burger = "בורגר";
+  static const shawarma = "שווארמה";
+  static const pizza = "פיצה";
 }
 
 class AppStringArabic {
@@ -91,11 +105,17 @@ class AppStringArabic {
   static const get200Off = "خصم 200 ريال قطري";
   static const get = "يحصل";
   static const getFlatOff = "خصم ثابت 20%";
-
   static const onOrderAbove999Qr = "للطلبات التي تزيد قيمتها عن 999 ريال قطري";
   static const onOrderAbove200Qr = "للطلبات فوق 200 ريال قطري";
-
   static const popularBrand = "العلامات التجارية الشعبية";
   static const orderNow = "اطلب الان";
   static const whatInYourMind = "بماذا تفكر؟";
+
+  static const all = "الجميع";
+  static const openNow = "مفتوح الان";
+  static const nearest = "الأقرب";
+  static const grill = "شواية";
+  static const burger = "برجر";
+  static const shawarma = "شاورما";
+  static const pizza = "بيتزا";
 }

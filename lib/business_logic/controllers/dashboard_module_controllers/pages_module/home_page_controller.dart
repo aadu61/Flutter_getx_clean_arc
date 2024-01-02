@@ -1,14 +1,18 @@
 import 'dart:ui';
 
 import 'package:get/get.dart';
+import 'package:mashe/business_logic/models/home_page_models.dart';
 import 'package:mashe/business_logic/models/selection_radio_model.dart';
 import 'package:mashe/core/constants/export_constant.dart';
 
 class HomePageController extends GetxController {
   RxList<HomePageBannerModel> bannerList = RxList<HomePageBannerModel>();
   RxInt bannerCurrentIndex = RxInt(0);
-  RxList<RestaurantModel> popularBrandList = RxList<RestaurantModel>();
+  RxList<Restaurants> popularBrandList = RxList<Restaurants>();
   RxList<SelectionRadioModel> whatInYourMind = RxList<SelectionRadioModel>();
+  RxList<SelectionRadioModel> foodType = RxList<SelectionRadioModel>();
+  RxString  selectedFoodType = RxString("");
+  Rxn<RestaurantModel> restaurantsData = Rxn<RestaurantModel>();
 
   @override
   void onInit() {
@@ -17,6 +21,8 @@ class HomePageController extends GetxController {
 
     addDataToBannerList();
     addDataToPopularBrandList();
+
+    restaurantsData.value = RestaurantModel.fromJson(shawarmaDataJson);
   }
 
   void addDataToBannerList() {
@@ -44,21 +50,45 @@ class HomePageController extends GetxController {
       isSelected: false
     ));
     whatInYourMind.add(SelectionRadioModel(
-        title: "All",
+        title: AppString.all.tr,
         isSelected: true
     ));
     whatInYourMind.add(SelectionRadioModel(
-        title: "Open now",
+        title: AppString.openNow.tr,
         isSelected: false
     ));
     whatInYourMind.add(SelectionRadioModel(
-        title: "Nearest",
+        title: AppString.nearest.tr,
         isSelected: false
+    ));
+
+    foodType.add(SelectionRadioModel(
+      title: AppString.grill.tr,
+      isSelected: false,
+      icon: ImageConstants.grill,
+    ));
+
+    foodType.add(SelectionRadioModel(
+      title: AppString.burger.tr,
+      isSelected: false,
+      icon: ImageConstants.burgerFoodType,
+    ));
+
+    foodType.add(SelectionRadioModel(
+      title: AppString.shawarma.tr,
+      isSelected: false,
+      icon: ImageConstants.shawarma,
+    ));
+
+    foodType.add(SelectionRadioModel(
+      title: AppString.pizza.tr,
+      isSelected: false,
+      icon: ImageConstants.ic_pizza,
     ));
   }
 
   void addDataToPopularBrandList() {
-    popularBrandList.add(RestaurantModel(
+    popularBrandList.add(Restaurants(
       backgroundImage: "",
       isOpen: true,
       restaurantIcon: ImageConstants.mcd,
@@ -66,7 +96,7 @@ class HomePageController extends GetxController {
       status: "",
       deliveryTime: "15 mins",
     ));
-    popularBrandList.add(RestaurantModel(
+    popularBrandList.add(Restaurants(
       backgroundImage: "",
       isOpen: true,
       restaurantIcon: ImageConstants.japanika,
@@ -74,7 +104,7 @@ class HomePageController extends GetxController {
       status: "",
       deliveryTime: "12 mins",
     ));
-    popularBrandList.add(RestaurantModel(
+    popularBrandList.add(Restaurants(
       backgroundImage: "",
       isOpen: true,
       restaurantIcon: ImageConstants.kfc,
@@ -82,7 +112,7 @@ class HomePageController extends GetxController {
       status: "",
       deliveryTime: "10 mins",
     ));
-    popularBrandList.add(RestaurantModel(
+    popularBrandList.add(Restaurants(
       backgroundImage: "",
       isOpen: true,
       restaurantIcon: ImageConstants.pizzaHutRec,
@@ -91,25 +121,96 @@ class HomePageController extends GetxController {
       deliveryTime: "05 mins",
     ));
   }
+
+   getSelectedFoodType() {
+    for (var element in foodType) {
+      if(element.isSelected!) {
+        selectedFoodType.value = element.title ?? "";
+      }
+    }
+
+    selectedFoodType.refresh();
+  }
+
+
+  var shawarmaDataJson = {
+    "advertisement" : [
+      {
+        "backgroundImage":ImageConstants.imgShawarma,
+        "restaurantIcon":"",
+        "restaurantName":"Shawarma Club",
+        "deliveryTime":"15 mins",
+        "isOpen":true,
+        "isFavourite":true,
+        "status":""
+      },
+      {
+        "backgroundImage":ImageConstants.imgShawarma,
+        "restaurantIcon":"",
+        "restaurantName":"Mahse Club",
+        "deliveryTime":"15 mins",
+        "isOpen":true,
+        "isFavourite":true,
+        "status":""
+      }
+
+    ],
+    "restaurants":[
+      {
+        "backgroundImage":ImageConstants.imgKebabStation,
+        "restaurantIcon":"",
+        "restaurantName":"Kebab Station",
+        "deliveryTime":"15 mins",
+        "isOpen":true,
+        "isFavourite":false,
+        "status":"Best Seller"
+      },
+      {
+        "backgroundImage":ImageConstants.imgGrilledClub,
+        "restaurantIcon":"",
+        "restaurantName":"Grilled Club",
+        "deliveryTime":"22 mins",
+        "isOpen":true,
+        "isFavourite":false,
+        "status":"Top Rated"
+      },
+      {
+        "backgroundImage":ImageConstants.imgAoneShawarma,
+        "restaurantIcon":"",
+        "restaurantName":"Aone Shawarma",
+        "deliveryTime":"10 mins",
+        "isOpen":true,
+        "isFavourite":false,
+        "status":"Nearest"
+      },
+      {
+        "backgroundImage":ImageConstants.imgAlKhalilCafe,
+        "restaurantIcon":"",
+        "restaurantName":"Al-Khalil Cafe",
+        "deliveryTime":"16 mins",
+        "isOpen":true,
+        "isFavourite":false,
+        "status":""
+      },
+      {
+        "backgroundImage":ImageConstants.imgShawarmaClub,
+        "restaurantIcon":"",
+        "restaurantName":"Shawarma Club",
+        "deliveryTime":"12 mins",
+        "isOpen":false,
+        "isFavourite":false,
+        "status":""
+      },
+      {
+        "backgroundImage":ImageConstants.imgMrShawarma,
+        "restaurantIcon":"",
+        "restaurantName":"Mr. Shawarma",
+        "deliveryTime":"18 mins",
+        "isOpen":false,
+        "isFavourite":false,
+        "status":""
+      },
+    ]
+  };
 }
 
-class HomePageBannerModel {
-  String? bannerImage;
-  String? bannerTitleText;
-  String? bannerDecText;
-  String? bannerResIcon;
-  Color? color;
-
-  HomePageBannerModel({this.bannerImage, this.bannerTitleText, this.bannerDecText, this.bannerResIcon, this.color});
-}
-
-class RestaurantModel {
-  String? backgroundImage;
-  String? restaurantIcon;
-  String? restaurantName;
-  String? deliveryTime;
-  bool? isOpen;
-  String? status;
-
-  RestaurantModel({this.backgroundImage, this.restaurantIcon, this.restaurantName, this.deliveryTime, this.isOpen, this.status});
-}

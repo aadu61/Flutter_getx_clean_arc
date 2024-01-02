@@ -16,6 +16,7 @@ class MyColors {
  static Color voliteBanner =  const Color(0xff6733AB);
  static Color orangeBanner =  const Color(0xffE56000);
  static Color scafoldBg =  const Color(0xffFCFCFC);
+ static Color warningColor =  const Color(0xffFFA801);
 
  static Color shimmerBaseColor = Colors.black.withOpacity(0.8);
  static Color shimmerHighLightColor = const Color(0xffF9F9F9);
