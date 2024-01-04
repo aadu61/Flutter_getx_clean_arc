@@ -27,7 +27,6 @@ class AppString {
   static const orderNow = "Order Now";
   static const popularBrand = "Popular brands";
   static const whatInYourMind = "What’s in your mind?";
-
   static const all = "All";
   static const openNow = "Open now";
   static const nearest = "Nearest";
@@ -35,6 +34,13 @@ class AppString {
   static const burger = "Burger";
   static const shawarma = "Shawarma";
   static const pizza = "Pizza";
+  static const topRated = "Top Rated";
+  static const bestSeller = "Best Seller";
+  static const open = "Open";
+  static const closed = "Closed";
+  static const mins = "Mins";
+  static const search = "Search";
+
 
 
 
@@ -79,6 +85,12 @@ class AppStringHebrew {
   static const burger = "בורגר";
   static const shawarma = "שווארמה";
   static const pizza = "פיצה";
+  static const topRated = "מדורג גבוה";
+  static const bestSeller = "רב מכר";
+  static const open = "לִפְתוֹחַ";
+  static const closed = "סָגוּר";
+  static const mins = "דקות";
+  static const search = "לחפש";
 }
 
 class AppStringArabic {
@@ -118,4 +130,10 @@ class AppStringArabic {
   static const burger = "برجر";
   static const shawarma = "شاورما";
   static const pizza = "بيتزا";
+  static const topRated = "أعلى التقييمات";
+  static const bestSeller = "الأكثر مبيعًا";
+  static const open = "يفتح";
+  static const closed = "مغلق";
+  static const mins = "دقيقة";
+  static const search = "يبحث";
 }

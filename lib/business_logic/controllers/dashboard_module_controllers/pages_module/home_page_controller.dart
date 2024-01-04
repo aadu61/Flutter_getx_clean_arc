@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:get/get.dart';
 import 'package:mashe/business_logic/models/home_page_models.dart';
@@ -76,7 +75,7 @@ class HomePageController extends GetxController {
 
     foodType.add(SelectionRadioModel(
       title: AppString.shawarma.tr,
-      isSelected: false,
+      isSelected: true,
       icon: ImageConstants.shawarma,
     ));
 
@@ -85,6 +84,8 @@ class HomePageController extends GetxController {
       isSelected: false,
       icon: ImageConstants.ic_pizza,
     ));
+
+    selectedFoodType.value =  AppString.shawarma.tr;
   }
 
   void addDataToPopularBrandList() {
@@ -94,7 +95,7 @@ class HomePageController extends GetxController {
       restaurantIcon: ImageConstants.mcd,
       restaurantName: "McDonald’s",
       status: "",
-      deliveryTime: "15 mins",
+      deliveryTime: "15 ${AppString.mins.tr}",
     ));
     popularBrandList.add(Restaurants(
       backgroundImage: "",
@@ -102,7 +103,7 @@ class HomePageController extends GetxController {
       restaurantIcon: ImageConstants.japanika,
       restaurantName: "Japanika",
       status: "",
-      deliveryTime: "12 mins",
+      deliveryTime: "12 ${AppString.mins.tr}",
     ));
     popularBrandList.add(Restaurants(
       backgroundImage: "",
@@ -110,7 +111,7 @@ class HomePageController extends GetxController {
       restaurantIcon: ImageConstants.kfc,
       restaurantName: "KFC",
       status: "",
-      deliveryTime: "10 mins",
+      deliveryTime: "10 ${AppString.mins.tr}",
     ));
     popularBrandList.add(Restaurants(
       backgroundImage: "",
@@ -118,7 +119,7 @@ class HomePageController extends GetxController {
       restaurantIcon: ImageConstants.pizzaHutRec,
       restaurantName: "Pizza Hut",
       status: "",
-      deliveryTime: "05 mins",
+      deliveryTime: "05 ${AppString.mins.tr}",
     ));
   }
 
@@ -139,7 +140,7 @@ class HomePageController extends GetxController {
         "backgroundImage":ImageConstants.imgShawarma,
         "restaurantIcon":"",
         "restaurantName":"Shawarma Club",
-        "deliveryTime":"15 mins",
+        "deliveryTime":"15 ${AppString.mins.tr}",
         "isOpen":true,
         "isFavourite":true,
         "status":""
@@ -148,7 +149,7 @@ class HomePageController extends GetxController {
         "backgroundImage":ImageConstants.imgShawarma,
         "restaurantIcon":"",
         "restaurantName":"Mahse Club",
-        "deliveryTime":"15 mins",
+        "deliveryTime":"15 ${AppString.mins.tr}",
         "isOpen":true,
         "isFavourite":true,
         "status":""
@@ -160,34 +161,34 @@ class HomePageController extends GetxController {
         "backgroundImage":ImageConstants.imgKebabStation,
         "restaurantIcon":"",
         "restaurantName":"Kebab Station",
-        "deliveryTime":"15 mins",
+        "deliveryTime":"15 ${AppString.mins.tr}",
         "isOpen":true,
         "isFavourite":false,
-        "status":"Best Seller"
+        "status":AppString.bestSeller.tr
       },
       {
         "backgroundImage":ImageConstants.imgGrilledClub,
         "restaurantIcon":"",
         "restaurantName":"Grilled Club",
-        "deliveryTime":"22 mins",
+        "deliveryTime":"22 ${AppString.mins.tr}",
         "isOpen":true,
         "isFavourite":false,
-        "status":"Top Rated"
+        "status":AppString.topRated.tr
       },
       {
         "backgroundImage":ImageConstants.imgAoneShawarma,
         "restaurantIcon":"",
         "restaurantName":"Aone Shawarma",
-        "deliveryTime":"10 mins",
+        "deliveryTime":"10 ${AppString.mins.tr}",
         "isOpen":true,
         "isFavourite":false,
-        "status":"Nearest"
+        "status":AppString.nearest.tr
       },
       {
         "backgroundImage":ImageConstants.imgAlKhalilCafe,
         "restaurantIcon":"",
         "restaurantName":"Al-Khalil Cafe",
-        "deliveryTime":"16 mins",
+        "deliveryTime":"16 ${AppString.mins.tr}",
         "isOpen":true,
         "isFavourite":false,
         "status":""
@@ -196,7 +197,7 @@ class HomePageController extends GetxController {
         "backgroundImage":ImageConstants.imgShawarmaClub,
         "restaurantIcon":"",
         "restaurantName":"Shawarma Club",
-        "deliveryTime":"12 mins",
+        "deliveryTime":"12 ${AppString.mins.tr}",
         "isOpen":false,
         "isFavourite":false,
         "status":""
@@ -205,7 +206,7 @@ class HomePageController extends GetxController {
         "backgroundImage":ImageConstants.imgMrShawarma,
         "restaurantIcon":"",
         "restaurantName":"Mr. Shawarma",
-        "deliveryTime":"18 mins",
+        "deliveryTime":"18 ${AppString.mins.tr}",
         "isOpen":false,
         "isFavourite":false,
         "status":""
