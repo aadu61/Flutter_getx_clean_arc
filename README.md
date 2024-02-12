@@ -1,4 +1,4 @@
-# mashe
+# learning purpose 
 
 A new Flutter project.
 
