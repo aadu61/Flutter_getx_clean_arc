@@ -1,5 +1,6 @@
 import 'package:mashe/business_logic/controllers/splash_screen_controllers/splash_controller.dart';
 import 'package:mashe/core/export_core.dart';
+import 'package:mashe/core/theam_data/aap_theam.dart';
 import 'package:mashe/ui/dashboard_module/dash_board_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -7,6 +8,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return GetX<SplashScreenController>(
       init: SplashScreenController(),
       builder: (splashScreenController) {
@@ -76,7 +78,7 @@ class SplashScreen extends StatelessWidget {
                     width: Get.width,
                     padding: EdgeInsets.only(top: 40.sp, left: 16.sp, right: 16.sp),
                     decoration: BoxDecoration(
-                      color: MyColors.naturalWhite,
+                      color: theme.baseContainerColor,
                       borderRadius: BorderRadius.only(topRight: Radius.circular(24.sp), topLeft: Radius.circular(24.sp)),
                     ),
                     child: splashScreenController.isLanguageSelected.value
@@ -108,7 +110,7 @@ class SplashScreen extends StatelessWidget {
                               CustomButton(
                                 name: AppString.getStarted.tr,
                                 onTap: () {
-                                  Get.to(()=> DashBoardScreen());
+                                  Get.to(() => DashBoardScreen());
                                 },
                                 inSideVerticalPadding: 14.sp,
                                 isActive: true,
@@ -120,8 +122,15 @@ class SplashScreen extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              CommonFunctions.customTextView(
-                                  text: AppString.chooseLanguage, fontWeight: FontWeight.w600, fontSize: Fonts.fonts24, color: MyColors.appBlackColor, fontFamily: Fonts.poppins),
+                              GestureDetector(
+                                onTap: () {
+                                  AppTheme.changeAppTheam();
+                                },
+                                child: CommonFunctions.customTextView(
+                                  text: AppString.chooseLanguage,
+                                  style: theme.textTheme.titleMedium,
+                                ),
+                              ),
                               SizedBox(
                                 height: 24.sp,
                               ),
@@ -156,8 +165,7 @@ class SplashScreen extends StatelessWidget {
                                             SizedBox(
                                               width: 12.sp,
                                             ),
-                                            CommonFunctions.customTextView(
-                                                text: localSingleObject.title ?? "", fontSize: 16.sp, fontWeight: FontWeight.w500, fontFamily: Fonts.poppins)
+                                            CommonFunctions.customTextView(text: localSingleObject.title ?? "", style: theme.textTheme.labelLarge)
                                           ],
                                         ),
                                       );

@@ -1,4 +1,5 @@
 import 'package:mashe/core/export_core.dart';
+import 'package:mashe/core/theam_data/aap_theam.dart';
 import 'package:mashe/ui/splash_module/splash_screen.dart';
 
 void main() {
@@ -22,10 +23,9 @@ class MyApp extends StatelessWidget {
           translationsKeys: LanguageChange().keys,
           locale: const Locale("en","US"),   /// for getting device local we can use get.deviceLocale
           fallbackLocale: const Locale("en","US"),
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
-          ),
+          theme: AppTheme().lightTheme,
+          darkTheme: AppTheme().darkTheme,
+          themeMode: ThemeMode.system,
           home: const SplashScreen(),
         );
       }
