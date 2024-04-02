@@ -48,6 +48,7 @@ dependencies:
   flutter_svg: ^2.0.9
   carousel_slider: ^4.2.1
   sticky_headers: ^0.3.0+2
+  flutter_animate: ^4.5.0
 
 dev_dependencies:
   flutter_test:

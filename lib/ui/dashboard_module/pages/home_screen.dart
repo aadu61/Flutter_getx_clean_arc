@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:mashe/business_logic/controllers/dashboard_module_controllers/pages_module/home_page_controller.dart';
 import 'package:mashe/core/export_core.dart';
 import 'package:sticky_headers/sticky_headers.dart';
@@ -25,8 +24,6 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSize.verticalSpace(statusBar),
-
-                ///Home and Search button
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.sp),
                   child: Row(
@@ -44,7 +41,8 @@ class HomeScreen extends StatelessWidget {
                               height: 18.sp,
                             ),
                             CustomSize.horizontalSpace(4.sp),
-                            CommonFunctions.customTextView(text: AppString.home.tr, fontSize: 14.sp, fontFamily: Fonts.poppins, fontWeight: FontWeight.w500, color: MyColors.appBlackColor),
+                            CommonFunctions.customTextView(
+                                text: AppString.home.tr, fontSize: 14.sp, fontFamily: Fonts.poppins, fontWeight: FontWeight.w500, color: MyColors.appBlackColor),
                             CustomSize.horizontalSpace(8.sp),
                             Image.asset(
                               ImageConstants.arrowDown,
@@ -56,57 +54,60 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                ),
+                ).animate().fade().slide(),
                 CustomSize.verticalSpace(16.sp),
                 Expanded(
-                  child: SingleChildScrollView(
-                    keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ///banners
-                        const BannersOffersWidgets(),
+                    child: SingleChildScrollView(
+                  keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ///Banners
+                      const BannersOffersWidgets().animate().fade(),
 
-                        ///Indicator
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: controller.bannerList.asMap().entries.map((entry) {
-                            return GestureDetector(
-                              child: controller.bannerCurrentIndex.value == entry.key
-                                  ? Container(
-                                      width: 24.sp,
-                                      height: 8.sp,
-                                      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-                                      decoration: BoxDecoration(color: MyColors.appPrimaryRed, borderRadius: BorderRadius.circular(50.sp)),
-                                    )
-                                  : Container(
-                                      width: 8.sp,
-                                      height: 8.sp,
-                                      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: MyColors.naturalBlack.withOpacity(0.15),
-                                      ),
+                      ///Indicator
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: controller.bannerList.asMap().entries.map((entry) {
+                          return GestureDetector(
+                            child: controller.bannerCurrentIndex.value == entry.key
+                                ? Container(
+                                    width: 24.sp,
+                                    height: 8.sp,
+                                    margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                                    decoration: BoxDecoration(color: MyColors.appPrimaryRed, borderRadius: BorderRadius.circular(50.sp)),
+                                  )
+                                : Container(
+                                    width: 8.sp,
+                                    height: 8.sp,
+                                    margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: MyColors.naturalBlack.withOpacity(0.15),
                                     ),
-                            );
-                          }).toList(),
-                        ),
-                        CustomSize.verticalSpace(16.sp),
+                                  ),
+                          );
+                        }).toList(),
+                      ).animate().fade().slide(),
+                      CustomSize.verticalSpace(16.sp),
 
-                        ///Popular brand
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.sp),
-                          child: CommonFunctions.customTextView(text: AppString.popularBrand.tr, fontWeight: FontWeight.w600, fontSize: 24.sp, color: MyColors.appBlackColor),
-                        ),
-                        const PopularBrandWidgets(),
+                      ///Popular Brand
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.sp),
+                        child: CommonFunctions.customTextView(text: AppString.popularBrand.tr, fontWeight: FontWeight.w600, fontSize: 24.sp, color: MyColors.appBlackColor),
+                      ).animate().fade(),
 
-                        ///What’s in your mind?
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.sp),
-                          child: CommonFunctions.customTextView(text: AppString.whatInYourMind.tr, fontWeight: FontWeight.w600, fontSize: 24.sp, color: MyColors.appBlackColor),
-                        ),
-                        CustomSize.verticalSpace(16.sp),
-                        StickyHeader(
+                      const PopularBrandWidgets().animate().fade().slideX(duration: const Duration(milliseconds: 500)),
+
+                      ///What's in your mind?
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.sp),
+                        child: CommonFunctions.customTextView(text: AppString.whatInYourMind.tr, fontWeight: FontWeight.w600, fontSize: 24.sp, color: MyColors.appBlackColor),
+                      ).animate().fade(),
+                      CustomSize.verticalSpace(16.sp),
+
+                      ///Sticky Header
+                      StickyHeader(
                           header: Container(
                             height: 60.sp,
                             padding: EdgeInsets.symmetric(vertical: 12.sp),
@@ -154,14 +155,14 @@ class HomeScreen extends StatelessWidget {
                                     width: 8.sp,
                                   );
                                 },
-                              ),
+                              ).animate().fade().slideX(duration: const Duration(milliseconds: 500)),
                             ),
                           ),
                           content: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              const FoodTypeCategoryList().animate().fade().slideX(duration: const Duration(milliseconds: 500)),
 
-                              const FoodTypeCategoryList(),
                               ///Selected Food Type
                               Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 16.sp),
@@ -169,18 +170,16 @@ class HomeScreen extends StatelessWidget {
                                     text: controller.selectedFoodType.value, fontWeight: FontWeight.w600, fontSize: 24.sp, color: MyColors.appBlackColor),
                               ),
                               CustomSize.verticalSpace(10.sp),
-                              ///Ad place
-                              const RestaurantAdsList(),
 
-                              ///Grid
-                              const RestaurantGridList()
+                              const RestaurantAdsList().animate().fade().scale(duration: const Duration(milliseconds: 500)),
+
+                              const RestaurantGridList().animate().fade().scale(duration: const Duration(milliseconds: 500)),
                             ],
-                          ),
-                        )
-                      ],
-                    ),
+                          )
+                      ),
+                    ],
                   ),
-                )
+                ))
               ],
             ),
           );
